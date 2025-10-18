@@ -42,9 +42,68 @@ main {
   @include flex-column(0rem);
   align-items: center;
 
+  nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+
+    .logo {
+      padding: 1rem;
+      cursor: pointer;
+    }
+
+    .menu {
+      ul {
+        display: flex;
+        gap: 0.6rem;
+
+        .mhide {
+          display: none;
+        }
+
+        .btn {
+          background-color: #cebd63;
+          color: #1e1e1e;
+
+          button {
+            background-color: transparent;
+            border: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-family: chillax;
+            cursor: pointer;
+          }
+        }
+
+        li {
+          list-style: none;
+          text-transform: uppercase;
+          font-family: chillax;
+          padding: 0.8rem 1rem;
+          background-color: #1e1e1e;
+          border-radius: 0.7rem;
+          font-size: 0.8rem;
+          letter-spacing: 0.1rem;
+          cursor: pointer;
+
+          span {
+            background-color: #cebd63;
+            color: #121212;
+            padding: 0.5rem 0.7rem;
+            border-radius: 50%;
+            font-size: 0.7rem;
+          }
+        }
+      }
+    }
+  }
+
   section.view1 {
     width: 100%;
-    @include flex-column(2rem);
+    @include flex-column(1rem);
     padding: 1rem;
 
     .top {
@@ -317,7 +376,7 @@ main {
       }
     }
 
-        .card:nth-child(3) {
+    .card:nth-child(3) {
       width: 100%;
       background-image: url("./Assests/team3.webp");
       background-size: cover;
@@ -429,7 +488,7 @@ main {
   section.view7 {
     @include flex-column(0rem);
     width: 100%;
-    padding: 0.5rem;
+    padding: 1rem;
     color: black;
     margin-bottom: 1.5rem;
 
@@ -463,13 +522,159 @@ main {
       }
     }
   }
+
+  footer {
+    width: 100%;
+    @include flex-column(1rem);
+    padding: 0rem 1rem;
+
+    .left {
+      background-color: #1e1e1e;
+      border-radius: 0.7rem;
+      padding: 2rem;
+      @include flex-column(6rem);
+
+      img {
+        width: 4rem;
+        cursor: pointer;
+      }
+
+      .social {
+        display: flex;
+        column-gap: 1rem;
+
+        i {
+          padding: 0.8rem;
+          background-color: rgba(255, 255, 255, 0.1);
+          border: 1px solid white;
+          border-radius: 50%;
+          cursor: pointer;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .right {
+      @include flex-column(1rem);
+      width: 100%;
+
+      .top {
+        background-color: #1e1e1e;
+        border-radius: 0.7rem;
+        padding: 2rem;
+        @include flex-column(4rem);
+
+        .links {
+          @include flex-column(1rem);
+          text-align: start;
+
+          .btn {
+            background-color: #cebd63;
+            color: #1e1e1e;
+            border: none;
+            border-radius: 0.7rem;
+            width: fit-content;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 1rem 1.5rem;
+            font-family: chillax;
+            cursor: pointer;
+          }
+
+          h3 {
+            font-family: chillax;
+            font-weight: 300;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+          }
+
+          ul {
+            @include flex-column(1.6rem);
+
+            li {
+              list-style: none;
+              cursor: pointer;
+              font-family: satoshi;
+              font-size: 1rem;
+              letter-spacing: 0.1rem;
+              color: rgb(244, 242, 237, 0.6);
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+
+      .bottom {
+        background-color: #1e1e1e;
+        border-radius: 0.7rem;
+        padding: 1rem;
+        @include flex-column(2rem);
+        margin-bottom: 1rem;
+
+        .made {
+          display: flex;
+          justify-content: center;
+
+          p {
+            font-family: chillax;
+            font-size: 1rem;
+            color: rgba(244, 242, 237, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+          }
+        }
+
+        .gotop {
+          display: flex;
+          justify-content: center;
+
+          p {
+            font-family: chillax;
+            font-size: 1rem;
+            color: rgba(244, 242, 237, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            color: white;
+
+            button {
+              background-color: transparent;
+              border: none;
+
+              i {
+                padding: 0.8rem;
+                background-color: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 50%;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                cursor: pointer;
+                font-size: 1.2rem;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 900px) {
   main {
+    nav {
+      .menu {
+        ul {
+          .mhide {
+            display: flex;
+          }
+        }
+      }
+    }
+
     section.view1 {
       flex-direction: row;
-      padding: 1rem 4rem;
+      padding: 1rem;
 
       .top,
       .bottom {
@@ -594,8 +799,10 @@ main {
 
     section.view7 {
       .contact {
+        width: 100%;
         flex-direction: row;
-        align-items: flex-end;
+        align-items: end;
+        justify-content: space-between;
         padding: 3rem;
 
         .c-top {
@@ -607,6 +814,34 @@ main {
         .c-bottom {
           //  padding: 3rem 9rem;
           width: 20%;
+        }
+      }
+    }
+
+    footer{
+      flex-direction: row;
+
+      .left{
+        justify-content: space-between;
+        margin-bottom: 1rem;
+      }
+
+      .right{
+
+        .top{
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 3rem;
+
+          .links{
+            width: 33%;
+          }
+        }
+
+        .bottom{
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 3rem 1rem;
         }
       }
     }
